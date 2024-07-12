@@ -23,10 +23,16 @@ public class UserDao {
 	public List<User> getUsers() {
 		return userList;
 	}
-	
+
 	public User getUser(int id) {
-		Predicate<? super User> predicate = user -> user.getId().equals(id); 
-		return userList.stream().filter(predicate).findFirst().get();
-		
+		Predicate<? super User> predicate = user -> user.getId().equals(id);
+		return userList.stream().filter(predicate).findFirst().orElse(null);
+
+	}
+
+	public User save(User user) {
+		user.setId(++userCount);
+		userList.add(user);
+		return user;
 	}
 }

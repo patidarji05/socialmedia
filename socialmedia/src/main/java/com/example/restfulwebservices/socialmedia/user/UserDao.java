@@ -29,6 +29,11 @@ public class UserDao {
 		return userList.stream().filter(predicate).findFirst().orElse(null);
 
 	}
+	
+	public void deleteById(int id) {
+		Predicate<? super User> predicate = user -> user.getId().equals(id);
+		userList.removeIf(predicate);
+	}
 
 	public User save(User user) {
 		user.setId(++userCount);

@@ -28,4 +28,14 @@ public class PersionController {
 	public Persion2 getSecondPersionRequestParam() {
 		return new Persion2(new Name("pradeep", "patidar"));
 	}
+	
+	@GetMapping(path = "/persion/header", headers = "X-API-VERSION=1")
+	public Persion1 getFirstPersionRequestHeaders() {
+		return new Persion1("Pradeep Patidar");
+	}
+	
+	@GetMapping(path = "/persion/header", headers = "X-API-VERSION=2")
+	public Persion2 getSecondPersionRequestHeadrs() {
+		return new Persion2(new Name("pradeep", "patidar"));
+	}
 }

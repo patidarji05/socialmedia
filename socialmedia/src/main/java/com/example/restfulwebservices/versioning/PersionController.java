@@ -16,4 +16,16 @@ public class PersionController {
 	public Persion2 getSecondPersion() {
 		return new Persion2(new Name("pradeep", "patidar"));
 	}
+	
+	
+	@GetMapping(path = "/persion", params = "version=1")
+	public Persion1 getFirstPersionRequestParam() {
+		return new Persion1("Pradeep Patidar");
+	}
+	
+
+	@GetMapping(path = "/persion", params = "version=2")
+	public Persion2 getSecondPersionRequestParam() {
+		return new Persion2(new Name("pradeep", "patidar"));
+	}
 }

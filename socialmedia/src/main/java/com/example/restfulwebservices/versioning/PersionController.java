@@ -38,4 +38,14 @@ public class PersionController {
 	public Persion2 getSecondPersionRequestHeadrs() {
 		return new Persion2(new Name("pradeep", "patidar"));
 	}
+	
+	@GetMapping(path = "/persion/accept", produces =  "application/vnd.company.app-v1+json")
+	public Persion1 getFirstPersionAcceptHeaders() {
+		return new Persion1("Pradeep Patidar");
+	}
+	
+	@GetMapping(path = "/persion/accept", produces ="application/vnd.company.app-v2+json")
+	public Persion2 getSecondPersionAcceptHeadrs() {
+		return new Persion2(new Name("pradeep", "patidar"));
+	}
 }

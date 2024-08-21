@@ -9,27 +9,28 @@ import org.springframework.stereotype.Component;
 import com.example.restfulwebservices.jdbc.Course;
 
 @Component
-public class CommandLineSpringJPA implements CommandLineRunner{
-	
+public class CommandLineSpringJPA implements CommandLineRunner {
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(CommandLineSpringJPA.class);
-	
+
 	@Autowired
 	private CourseSpringDataJPAReposiroty reposiroty;
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		reposiroty.save(new Course(10, "hjg","hjg"));
-		reposiroty.save(new Course(11, "ghf","ghf"));
-		reposiroty.save(new Course(12, "lkj","lkj"));
-		
+
+		reposiroty.save(new Course(10, "hjg", "hjg"));
+		reposiroty.save(new Course(11, "ghf", "ghf"));
+		reposiroty.save(new Course(12, "lkj", "ghf"));
+
 		reposiroty.deleteById(11l);
-		
-		LOGGER.info("Spring Data JPA: {}",reposiroty.findById(10l));
-		LOGGER.info("Spring Data JPA: {}",reposiroty.findById(12l));
-		
-	
-		
+
+		LOGGER.info("Spring Data JPA: {}", reposiroty.findById(10l));
+		LOGGER.info("Spring Data JPA: {}", reposiroty.findById(12l));
+
+		LOGGER.info("ID Exists: {}", reposiroty.existsById(12l));
+		LOGGER.info("Author List: {}", reposiroty.findByAuthor("ghf"));
+
 	}
 
 }

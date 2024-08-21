@@ -7,10 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-
 @EnableWebMvc
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "com.example.restfulwebservices.springjpa")
+@EnableJpaRepositories(basePackages = { "com.example.restfulwebservices.springjpa",
+		"com.example.restfulwebservices.springdatajpa" })
 @ComponentScan(basePackages = "com.example.restfulwebservices")
 @EntityScan(basePackages = "com.example.restfulwebservices")
 public class SocialmediaApplication {

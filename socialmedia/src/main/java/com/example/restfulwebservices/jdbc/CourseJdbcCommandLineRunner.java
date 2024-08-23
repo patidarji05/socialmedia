@@ -16,11 +16,11 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		courseJdbcRepository.insert(new Course(1, "Java Developer", "Pradeep"));
-		courseJdbcRepository.insert(new Course(2, "python Developer", "Ram"));
-		courseJdbcRepository.insert(new Course(3, "sql Developer", "Shyam"));
+		courseJdbcRepository.insert(new Course( "Java Developer", "Pradeep"));
+		courseJdbcRepository.insert(new Course( "python Developer", "Ram"));
+		courseJdbcRepository.insert(new Course("sql Developer", "Shyam"));
 
-		courseJdbcRepository.delete(1);
+		//courseJdbcRepository.delete(1);
 
 		LOGGER.info("Result are: {}", courseJdbcRepository.findById(3));
 	}

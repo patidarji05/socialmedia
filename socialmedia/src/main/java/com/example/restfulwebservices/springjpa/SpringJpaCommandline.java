@@ -25,11 +25,11 @@ class SpringJpaCommandline implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		reposCourseSpringDataRespository.save(new Course(7, "hgdf", "hgdf"));
-		reposCourseSpringDataRespository.save(new Course(8, "7689", "7685"));
-		reposCourseSpringDataRespository.save(new Course(9, "kdjgh", "123"));
+		reposCourseSpringDataRespository.save(new Course("hgdf", "hgdf"));
+		reposCourseSpringDataRespository.save(new Course("7689", "7685"));
+		reposCourseSpringDataRespository.save(new Course("kdjgh", "123"));
 
-		reposCourseSpringDataRespository.deleteById(9l);
+		//reposCourseSpringDataRespository.deleteById(9l);
 
 		LOGGER.info("Detail of {}",reposCourseSpringDataRespository.findById(7l));
 

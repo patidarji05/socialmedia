@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
-@Entity(name = "user_details")
+@Entity
 public class User {
 
 	protected User() {

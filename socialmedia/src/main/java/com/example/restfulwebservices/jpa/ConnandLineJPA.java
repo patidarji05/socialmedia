@@ -15,11 +15,11 @@ public class ConnandLineJPA implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
   
-		courseJPARepository.insert(new Course(4,"xyz", "xyz"));
-		courseJPARepository.insert(new Course(5,"abc", "abc"));
-		courseJPARepository.insert(new Course(6,"uvx", "uvx"));
+		courseJPARepository.insert(new Course("xyz", "xyz"));
+		courseJPARepository.insert(new Course("abc", "abc"));
+		courseJPARepository.insert(new Course("uvx", "uvx"));
 		
-		courseJPARepository.delete(5);
+	//	courseJPARepository.delete(5);
 		
 		System.out.println(courseJPARepository.findById(6));
 		System.out.println(courseJPARepository.findById(6));

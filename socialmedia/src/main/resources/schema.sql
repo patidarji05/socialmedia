@@ -1,8 +1,8 @@
-create table course
+create table if not exists course
 (
-   id bigint not null,
+   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
    name varchar(255) not null,
    author varchar(255) not null,
-   primary key (id) 
+  
 );
 

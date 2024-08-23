@@ -19,11 +19,11 @@ public class CommandLineSpringJPA implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		reposiroty.save(new Course(10, "hjg", "hjg"));
-		reposiroty.save(new Course(11, "ghf", "ghf"));
-		reposiroty.save(new Course(12, "lkj", "ghf"));
+		reposiroty.save(new Course("hjg", "hjg"));
+		reposiroty.save(new Course("ghf", "ghf"));
+		reposiroty.save(new Course("lkj", "ghf"));
 
-		reposiroty.deleteById(11l);
+		//reposiroty.deleteById(11l);
 
 		LOGGER.info("Spring Data JPA: {}", reposiroty.findById(10l));
 		LOGGER.info("Spring Data JPA: {}", reposiroty.findById(12l));

@@ -1,14 +1,15 @@
 package com.example.restfulwebservices.jdbc;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name="course_detail")
 public class Course {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
 	private String author;
@@ -17,9 +18,7 @@ public class Course {
 
 	}
 
-	public Course(long id, String name, String author) {
-		super();
-		this.id = id;
+	public Course( String name, String author) {
 		this.name = name;
 		this.author = author;
 	}

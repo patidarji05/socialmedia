@@ -23,5 +23,10 @@ public class HelloWorld {
 	return 	messageSource.getMessage("good.morning.message" , null, "Defult message", locale);
 	//	return "Hello Pradeep";
 	}
+	
+//	@GetMapping("csrf-token")
+//	public CsrfToken crsfToken(HttpServletRequest request) {
+//		return (CsrfToken) request.getAttribute("_csrf");
+//	}
 
 }

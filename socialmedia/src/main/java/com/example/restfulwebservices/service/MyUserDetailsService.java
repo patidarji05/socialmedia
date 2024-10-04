@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.restfulwebservices.entity.Users;
@@ -18,6 +19,7 @@ public class MyUserDetailsService implements UserDetailsService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyUserDetailsService.class);
 
 	private UsersRepo usersrepo;
+	
 
 	public MyUserDetailsService(UsersRepo usersrepo) {
 		this.usersrepo = usersrepo;

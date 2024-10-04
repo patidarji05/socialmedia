@@ -24,12 +24,12 @@ public class UsersPrinciple implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		return users.getUserName();
+		return users.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return users.getPassword();
+		return users.getUserName();
 	}
 
 }
